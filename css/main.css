@@ -3,4 +3,6 @@
 @import "vendor/bootstrap-responsive.css";
 @import "vendor/font-awesome.css";
 
-
+o-table-links a {
+  margin: 10px;
+}
