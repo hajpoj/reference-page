@@ -67,9 +67,15 @@
 <script id="resourceTemplate" type="text/html">
     <td><a href="{{ main_url }}" target="_blank">{{ name }}</a></td>
     <td class="o-resource-links">
+      {[ if(api_url !== "") { ]}
       <a href="{{ api_url }}" class="api-link" target="_blank"><i class="icon-book"></i></a>
+      {[ } ]}
+      {[ if(code_url !== "") { ]}
       <a href="{{ code_url }}" target="_blank"><i class="icon-file-alt"></i></a>
+      {[ } ]}
+      {[ if(github_url !== "") { ]}
       <a href="{{ github_url }}" target="_blank"><i class="icon-github-alt"></i></a>
+      {[ } ]}
     </td>
 </script>
 
