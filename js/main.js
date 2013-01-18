@@ -13,72 +13,184 @@ _.templateSettings = {
 };
 
 $(function() {
-  var resources = [
+
+  // **************************************************************************
+  // Resource lists
+
+  var javascriptResources = [
+    {
+      name: "Javascript",
+      url: "https://developer.mozilla.org/en-US/docs/JavaScript",
+      links: [
+        {
+          name: "ref",
+          url: "https://developer.mozilla.org/en-US/docs/JavaScript/Reference"
+        },
+        {
+          name: "string",
+          url: "https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/String"
+        },
+        {
+          name: "array",
+          url: "https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Array"
+        },
+        {
+          name: "date",
+          url: "https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Date"
+        }
+      ]
+    },
+    {
+      name: "JQuery",
+      url: "http://jquery.com/",
+      links: [
+        {
+          name: "api",
+          url: "http://api.jquery.com/"
+        },
+        {
+          name: "code",
+          url: "https://github.com/jquery/jquery/tree/master/src"
+        },
+        {
+          name: "github",
+          url: "https://github.com/jquery/jquery"
+        }
+      ]
+    },
+    {
+      name: "Twitter Bootstrap",
+      url: "http://twitter.github.com/bootstrap/",
+      links: [
+        {
+          name: "api",
+          url: "http://twitter.github.com/bootstrap/javascript.html"
+        },
+        {
+          name: "css",
+          url: "https://github.com/twitter/bootstrap/blob/master/docs/assets/css/bootstrap.css"
+        },
+        {
+          name: "js",
+          url: "https://github.com/twitter/bootstrap/blob/master/docs/assets/js/bootstrap.js"
+        },
+        {
+          name: "github",
+          url: "https://github.com/twitter/bootstrap"
+        }
+      ]
+    },
     {
       name: "Backbone.js",
-      main_url: "http://www.backbonejs.com",
-      api_url: "http://www.backbonejs.com",
-      code_url: "https://gist.github.com/723448ef3d7cf3ba3b0f",
-      github_url: "https://github.com/documentcloud/backbone"
-    }
-    , {
+      url: "http://www.backbonejs.com",
+      links: [
+      {
+        name: "api",
+        url: "http://www.backbonejs.com"
+      },
+        {
+          name: "code",
+          url: "https://github.com/documentcloud/backbone/blob/master/backbone.js"
+        },
+        {
+          name: "github",
+          url: "https://github.com/documentcloud/backbone"
+        }
+      ]
+    },
+    {
       name: "Underscore.js",
-      main_url: "http://underscorejs.org",
-      api_url: "http://underscorejs.org",
-      code_url: "https://gist.github.com/4de2ec66ad46e4f521ef",
-      github_url: "https://github.com/documentcloud/underscore"
-    }
-    , {
+      url: "http://underscorejs.org",
+      links: [
+        {
+          name: "api",
+          url: "http://underscorejs.org"
+        },
+        {
+          name: "code",
+          url: "https://github.com/documentcloud/underscore/blob/master/underscore.js"
+        },
+        {
+          name: "github",
+          url: "https://github.com/documentcloud/underscore"
+        }
+      ]
+    },
+    {
       name: "Underscore.string.js",
-      main_url: "http://epeli.github.com/underscore.string/",
-      api_url: "https://github.com/epeli/underscore.string#readme",
-      code_url: "https://gist.github.com/29d89f78de3f52da3c5b",
-      github_url: "https://github.com/epeli/underscore.string"
+      url: "http://epeli.github.com/underscore.string/",
+      links: [
+        {
+          name: "api",
+          url: "https://github.com/epeli/underscore.string#readme"
+        },
+        {
+          name: "code",
+          url: "https://github.com/epeli/underscore.string/blob/master/lib/underscore.string.js"
+        },
+        {
+          name: "github",
+          url: "https://github.com/epeli/underscore.string"
+        }
+      ]
     }
-    , {
-      name: "JQuery",
-      main_url: "http://jquery.com/",
-      api_url: "http://api.jquery.com/",
-      code_url: "https://github.com/jquery/jquery/tree/master/src",
-      github_url: "https://github.com/jquery/jquery"
-    }
-    , {
-      name: "Twitter Bootstrap",
-      main_url: "http://twitter.github.com/bootstrap/",
-      api_url: "http://twitter.github.com/bootstrap/javascript.html",
-      code_url: "https://github.com/twitter/bootstrap/blob/master/docs/assets/js/bootstrap.js",
-      github_url: "https://github.com/twitter/bootstrap"
-    }
-    , {
-      name: "Javascript String",
-      main_url: "http://www.impressivewebs.com/javascript-string-methods-reference/",
-      api_url: "http://www.hunlock.com/blogs/The_Complete_Javascript_Strings_Reference",
-      code_url: "",
-      github_url: ""
-    }
-    , {
-      name: "Javascript Array",
-      main_url: "http://www.impressivewebs.com/javascript-array-methods-reference/",
-      api_url: "http://www.hunlock.com/blogs/Mastering_Javascript_Arrays",
-      code_url: "",
-      github_url: ""
-    }
-//    , {
-//      name: "",
-//      main_url: "",
-//      api_url: "",
-//      code_url: "",
-//      github_url: ""
-//    }
   ];
+
+  var railsResources = [
+    {
+      name: "Ruby",
+      url: "http://www.ruby-lang.org/en/",
+      links: [
+        {
+          name: "core",
+          url: "http://www.ruby-doc.org/core-1.9.3/"
+        },
+        {
+          name: "std-lib",
+          url: "http://www.ruby-doc.org/stdlib-1.9.3/"
+        },
+        {
+          name: "toolbox",
+          url: "https://www.ruby-toolbox.com/blog"
+        },
+        {
+          name: "github",
+          url: "https://github.com/ruby/ruby"
+        }
+      ]
+    },
+    {
+      name: "Rails",
+      url: "http://rubyonrails.org/",
+      links: [
+        {
+          name: "api",
+          url: "http://api.rubyonrails.org/"
+        },
+        {
+          name: "guide",
+          url: "http://guides.rubyonrails.org/"
+        },
+        {
+          name: "railscasts",
+          url: "http://railscasts.com/"
+        },
+        {
+          name: "github",
+          url: "https://github.com/rails/rails"
+        }
+      ]
+    }
+  ];
+
+  /****************************************************************************
+   * Code
+   */
 
   hf.models.Resource = Backbone.Model.extend({
     defaults: {
       name: "",
-      main_url: "",
-      api_url: "",
-      code_url: "",
-      github: ""
+      url: ""
     }
   });
 
@@ -120,15 +232,29 @@ $(function() {
 
   hf.views.Appview = Backbone.View.extend({
     initialize: function() {
-      var resourceTableView = new hf.views.ResourceTable({
-        el: $('#resourceTable'),
-        resourceJSON: resources
+      var javascriptTableView = new hf.views.ResourceTable({
+        el: $('#javascript-resource'),
+        resourceJSON: javascriptResources
+      });
+      var railsTableView = new hf.views.ResourceTable({
+        el: $('#rails-resource'),
+        resourceJSON: railsResources
       });
     }
   });
 
   var appView = new hf.views.Appview({
     el: $('body')
+  });
+
+  // Other code
+
+  // set all a links to have a target of _blank
+  $('a').each(function(index, element) {
+    var $elm = $(element);
+    if(typeof $elm.attr('target') === 'undefined') {
+      $elm.attr('target', '_blank');
+    }
   });
 
 });

@@ -25,57 +25,70 @@
 <![endif]-->
 
 <div class="container">
-
-  Website / Docs / Sourcecode / github
   <div class="row">
-    <div class="span5">
-
+    <div class="span6 ">
+      <h3 class="page-header">Javascript References</h3>
       <table class="o-table-resources table table-bordered table-condensed">
+        <colgroup>
+          <col span="1" style="width:40%;">
+        </colgroup>
         <thead>
         <tr>
           <th class="span3">Website</th>
           <th class="span2">Links</th>
         </tr>
         </thead>
-        <tbody id="resourceTable">
+        <tbody id="javascript-resource">
+        </tbody>
+      </table>
+    </div>
+    <div class="span6">
+      <h3 class="page-header">Other useful resources</h3>
+      <a href="http://jsfiddle.net/hajpoj/Ny5Km/">JS Fiddle Base</a>
+      (bootstrap and backbone)
+      <h5>Regex</h5>
+      <a href="http://regexpal.com/">Regex Tester</a>
+      <br><a href="http://www.regular-expressions.info/">Regex Reference</a>
+    </div>
+  </div>
+
+  <div class="row">
+
+  </div>
+
+  <div class="row">
+    <div class="span6">
+      <h3 class="page-header">Ruby / Rails</h3>
+      <table class="o-table-resources table table-bordered table-condensed">
+        <colgroup>
+          <col span="1" style="width:40%;">
+        </colgroup>
+        <thead>
+        <tr>
+          <th class="span3">Website</th>
+          <th class="span2">Links</th>
+        </tr>
+        </thead>
+        <tbody id="rails-resource">
         </tbody>
       </table>
     </div>
   </div>
 
-  <button id="openAPIs" class="btn btn-primary">Open APIs</button>
-
-  <h3>ToDo:</h3>
-  <ol>
-    <li>Divide into sections. Links to source code</li>
-    <li>Have ability to open multiple links at once</li>
-    <li>Ruby/Rails/Javascript/HTML/CSS</li>
-    <li>Other resources</li>
-    <li>Shortcuts to JS fiddles that already have bootstrap and what not</li>
-    <li>Source code examples.s</li>
-  </ol>
-
 </div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+<script src="js/vendor/jquery-1.8.3.min.js"></script>
 <script src="js/vendor/underscore.js"></script>
 <script src="js/vendor/backbone.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 
 <script id="resourceTemplate" type="text/html">
-    <td><a href="{{ main_url }}" target="_blank">{{ name }}</a></td>
+    <td><a href="{{ url }}" target="_blank">{{ name }}</a></td>
     <td class="o-resource-links">
-      {[ if(api_url !== "") { ]}
-      <a href="{{ api_url }}" class="api-link" target="_blank"><i class="icon-book"></i></a>
-      {[ } ]}
-      {[ if(code_url !== "") { ]}
-      <a href="{{ code_url }}" target="_blank"><i class="icon-file-alt"></i></a>
-      {[ } ]}
-      {[ if(github_url !== "") { ]}
-      <a href="{{ github_url }}" target="_blank"><i class="icon-github-alt"></i></a>
-      {[ } ]}
+      {[ links.forEach(function(element) { ]}
+        <a href="{{ element.url }}" target="_blank">{{ element.name }}</a>&nbsp;|
+      {[ }); ]}
     </td>
 </script>
 
