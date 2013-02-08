@@ -133,6 +133,24 @@ $(function() {
           url: "https://github.com/epeli/underscore.string"
         }
       ]
+    },
+    {
+      name: "Knockout.js",
+      url: "http://knockoutjs.com/",
+      links: [
+        {
+          name: "api",
+          url: "http://knockoutjs.com/documentation/introduction.html"
+        },
+        {
+          name: "code",
+          url: "https://github.com/SteveSanderson/knockout/tree/master/src"
+        },
+        {
+          name: "github",
+          url: "https://github.com/SteveSanderson/knockout"
+        }
+      ]
     }
   ];
 
